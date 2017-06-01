@@ -6,4 +6,6 @@ package com.learn.spring.resource.service;
 public interface QueryService {
 
     void query();
+
+    void querySimple();
 }

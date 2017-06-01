@@ -18,9 +18,14 @@ public class QueryServiceImpl implements QueryService {
     @Autowired
     private OtherQueryService otherQueryService;
 
-    @Transactional(readOnly = true)
+    @Transactional
     public void query() {
         System.out.println(jdbcTemplate.queryForList("select * from master"));
         otherQueryService.query();
+    }
+
+    @Transactional
+    public void querySimple() {
+        System.out.println(jdbcTemplate.queryForList("select * from master"));
     }
 }

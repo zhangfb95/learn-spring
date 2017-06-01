@@ -2,6 +2,7 @@ package com.learn.spring.resource.service.impl;
 
 import com.keryun.calm.multi.ds.annotation.MultiDs;
 import com.learn.spring.resource.service.OtherQueryService;
+import com.learn.spring.resource.service.QueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -16,10 +17,13 @@ public class OtherQueryServiceImpl implements OtherQueryService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private QueryService queryService;
 
     @MultiDs("other")
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void query() {
         System.out.println(jdbcTemplate.queryForList("select * from other"));
+        queryService.querySimple();
     }
 }
