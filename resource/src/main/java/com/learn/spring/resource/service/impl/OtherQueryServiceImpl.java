@@ -1,6 +1,6 @@
 package com.learn.spring.resource.service.impl;
 
-import com.keryun.calm.multi.ds.annotation.MultiDs;
+import com.keruyun.calm.multi.ds.annotation.MultiDs;
 import com.learn.spring.resource.service.OtherQueryService;
 import com.learn.spring.resource.service.QueryService;
 import org.springframework.beans.factory.annotation.Autowired;
