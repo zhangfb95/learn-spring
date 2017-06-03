@@ -11,6 +11,7 @@
     <modules>
         <module>ioc</module>
         <module>resource</module>
+        <module>spel</module>
     </modules>
 
     <properties>
