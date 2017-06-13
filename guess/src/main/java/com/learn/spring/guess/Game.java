@@ -13,18 +13,19 @@ public class Game {
 
     public String call(int input) {
         String result = "";
+        int[] baseNumbers = specialNumbers.getNumbers();
 
-        int firstNumber = specialNumbers.getNumbers()[0];
+        int firstNumber = baseNumbers[0];
         if (isMultiple(input, firstNumber)) {
             result += OutputEnum.FIZZ.getName();
         }
 
-        int secondNumber = specialNumbers.getNumbers()[1];
+        int secondNumber = baseNumbers[1];
         if (isMultiple(input, secondNumber)) {
             result += OutputEnum.BUZZ.getName();
         }
 
-        int thirdNumber = specialNumbers.getNumbers()[2];
+        int thirdNumber = baseNumbers[2];
         if (isMultiple(input, thirdNumber)) {
             result += OutputEnum.WHIZZ.getName();
         }
