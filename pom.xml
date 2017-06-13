@@ -12,6 +12,8 @@
         <module>ioc</module>
         <module>resource</module>
         <module>spel</module>
+        <module>aspectj</module>
+        <module>test4unit</module>
     </modules>
 
     <properties>
