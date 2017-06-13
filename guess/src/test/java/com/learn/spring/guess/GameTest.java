@@ -18,6 +18,7 @@ public class GameTest {
         Game game = new Game(specialNumbers);
 
         String output = game.call(firstNumber);
+
         assertThat(output, is(OutputEnum.FIZZ.getName()));
     }
 
@@ -29,6 +30,7 @@ public class GameTest {
         Game game = new Game(specialNumbers);
 
         String output = game.call(secondtNumber);
+
         assertThat(output, is(OutputEnum.BUZZ.getName()));
     }
 
@@ -40,6 +42,7 @@ public class GameTest {
         Game game = new Game(specialNumbers);
 
         String output = game.call(thirdNumber);
+
         assertThat(output, is(OutputEnum.WHIZZ.getName()));
     }
 
@@ -52,6 +55,7 @@ public class GameTest {
         Game game = new Game(specialNumbers);
 
         String output = game.call(firstNumber * secondNumber);
+
         assertThat(output, is(OutputEnum.FIZZ.getName() + OutputEnum.BUZZ.getName()));
     }
 
@@ -65,6 +69,7 @@ public class GameTest {
         Game game = new Game(specialNumbers);
 
         String output = game.call(firstNumber * secondNumber * thirdNumber);
+
         assertThat(output, is(OutputEnum.FIZZ.getName() + OutputEnum.BUZZ.getName() + OutputEnum.WHIZZ.getName()));
     }
 }
