@@ -10,4 +10,8 @@ public class SpecialNumbers {
     public SpecialNumbers(int[] numbers) {
         this.numbers = numbers;
     }
+
+    public int[] getNumbers() {
+        return numbers;
+    }
 }

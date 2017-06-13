@@ -5,7 +5,9 @@ package com.learn.spring.guess;
  */
 public enum OutputEnum {
 
-    FIZZ("fizz");
+    FIZZ("fizz"),
+    BUZZ("buzz"),
+    WHIZZ("whizz");
 
     private String name;
 
