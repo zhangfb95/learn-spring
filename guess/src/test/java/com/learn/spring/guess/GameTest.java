@@ -8,7 +8,7 @@ import static org.hamcrest.core.Is.is;
 /**
  * @author zhangfb
  */
-public class GuessTest {
+public class GameTest {
 
     @Test
     public void should_say_fizz_when_input_is_multiple_of_number_one() {
