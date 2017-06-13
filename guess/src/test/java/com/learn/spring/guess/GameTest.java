@@ -22,7 +22,7 @@ public class GameTest {
     }
 
     @Test
-    public void should_say_buzz_when_input_is_multiple_of_number_one() {
+    public void should_say_buzz_when_input_is_multiple_of_number_second() {
         final int secondtNumber = 5;
         int[] numbers = {3, secondtNumber, 7};
         SpecialNumbers specialNumbers = new SpecialNumbers(numbers);
@@ -33,7 +33,7 @@ public class GameTest {
     }
 
     @Test
-    public void should_say_whizz_when_input_is_multiple_of_number_one() {
+    public void should_say_whizz_when_input_is_multiple_of_number_third() {
         final int thirdNumber = 7;
         int[] numbers = {3, 5, thirdNumber};
         SpecialNumbers specialNumbers = new SpecialNumbers(numbers);
@@ -41,5 +41,17 @@ public class GameTest {
 
         String output = game.call(thirdNumber);
         assertThat(output, is(OutputEnum.WHIZZ.getName()));
+    }
+
+    @Test
+    public void should_say_fizzbuss_when_input_is_multiple_of_first_x_second() {
+        final int firstNumber = 3;
+        final int secondNumber = 5;
+        int[] numbers = {firstNumber, secondNumber, 7};
+        SpecialNumbers specialNumbers = new SpecialNumbers(numbers);
+        Game game = new Game(specialNumbers);
+
+        String output = game.call(firstNumber * secondNumber);
+        assertThat(output, is(OutputEnum.FIZZ.getName() + OutputEnum.BUZZ.getName()));
     }
 }

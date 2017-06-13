@@ -12,18 +12,23 @@ public class Game {
     }
 
     public String call(int input) {
-        int firstNumber = specialNumbers.getNumbers()[0];
-        int secondNumber = specialNumbers.getNumbers()[1];
-        int thirdNumber = specialNumbers.getNumbers()[2];
+        String result = "";
 
-        if (firstNumber % input == 0) {
-            return OutputEnum.FIZZ.getName();
-        } else if (secondNumber % input == 0) {
-            return OutputEnum.BUZZ.getName();
-        } else if (thirdNumber % input == 0) {
-            return OutputEnum.WHIZZ.getName();
-        } else {
-            return null;
+        int firstNumber = specialNumbers.getNumbers()[0];
+        if (input % firstNumber == 0) {
+            result += OutputEnum.FIZZ.getName();
         }
+
+        int secondNumber = specialNumbers.getNumbers()[1];
+        if (input % secondNumber == 0) {
+            result += OutputEnum.BUZZ.getName();
+        }
+
+        int thirdNumber = specialNumbers.getNumbers()[2];
+        if (input % thirdNumber == 0) {
+            result += OutputEnum.WHIZZ.getName();
+        }
+
+        return result;
     }
 }
