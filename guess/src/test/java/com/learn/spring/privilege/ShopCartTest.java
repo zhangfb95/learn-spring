@@ -20,10 +20,10 @@ public class ShopCartTest {
         cart.add(goods);
 
         // when
-        BigDecimal totlePrice = cart.calc();
+        BigDecimal totalPrice = cart.calc();
 
         // then
-        assertThat(totlePrice, is(goods.getPrice().multiply(new BigDecimal(goods.getNum()))));
+        assertThat(totalPrice, is(goods.getPrice().multiply(new BigDecimal(goods.getNum()))));
     }
 
     @Test
