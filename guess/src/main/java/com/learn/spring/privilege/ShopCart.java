@@ -18,12 +18,17 @@ public class ShopCart {
     public BigDecimal calc() {
         BigDecimal result = BigDecimal.ZERO;
         for (Goods goods : goodsList) {
+            BigDecimal sourcePrice = getSourcePrice(goods);
             if (goods.getType() == TypeEnum.NO) {
-                result = result.add(goods.getPrice().multiply(new BigDecimal(goods.getNum())));
+                result = result.add(sourcePrice);
             } else if (goods.getType() == TypeEnum.EIGHT_ZHE) {
-                result = result.add(goods.getPrice().multiply(new BigDecimal(goods.getNum())).multiply(new BigDecimal("0.80")));
+                result = result.add(sourcePrice.multiply(new BigDecimal("0.80")));
             }
         }
         return result;
+    }
+
+    private BigDecimal getSourcePrice(Goods goods) {
+        return goods.getPrice().multiply(new BigDecimal(goods.getNum()));
     }
 }
