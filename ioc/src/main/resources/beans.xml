@@ -4,8 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- this MessageSource is being used in a web application -->
-    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="i18n"/>
+    <bean id="user" class="com.juconcurrent.learn.spring.ioc.vo.User">
+        <property name="username" value="juconcurrent"/>
+        <property name="password" value="123456"/>
     </bean>
 </beans>
