@@ -11,4 +11,5 @@ import lombok.Data;
     private String password;
     private int birth;
     private int a;
+    private int b;
 }
