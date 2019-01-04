@@ -9,5 +9,4 @@ import lombok.Data;
 
     private String username;
     private String password;
-    private int age;
 }
