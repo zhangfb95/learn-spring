@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:myname="http://www.juconcurrent.com/schema/user"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.juconcurrent.com/schema/user http://www.juconcurrent.com/schema/user.xsd">
 
     <bean id="user" class="com.juconcurrent.learn.spring.ioc.vo.User">
         <property name="username" value="juconcurrent"/>
         <property name="password" value="123456"/>
     </bean>
+    <myname:user id="user1" username="abc" password="def"/>
 </beans>

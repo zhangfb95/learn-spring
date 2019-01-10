@@ -13,5 +13,7 @@ public class Main {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
         User user = applicationContext.getBean("user", User.class);
         System.out.println(user);
+        User user1 = applicationContext.getBean("user1", User.class);
+        System.out.println(user1);
     }
 }
