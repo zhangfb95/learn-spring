@@ -1,5 +1,6 @@
 package com.juconcurrent.learn.spring.ioc;
 
+import com.juconcurrent.learn.spring.ioc.aware.MyBeanFactoryAware;
 import com.juconcurrent.learn.spring.ioc.vo.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,5 +16,7 @@ public class Main {
         System.out.println(user);
         User user1 = applicationContext.getBean("user1", User.class);
         System.out.println(user1);
+        MyBeanFactoryAware aware = applicationContext.getBean("myBeanFactoryAware", MyBeanFactoryAware.class);
+        aware.testAware();
     }
 }
