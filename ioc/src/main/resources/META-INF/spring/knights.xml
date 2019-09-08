@@ -4,13 +4,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
     <!--
-        1. bean实例化
-        2. 填充属性
-        3. 调用BeanNameAware的setBeanName方法
-        4. 调用BeanFactoryAware的setBeanFactory方法
-        5. 调用ApplicationContextAware的setApplicationContext方法
-        6. 调用BeamPostProcessor的预初始化方法
-        7.
+        bean的生命周期
+        1. 创建阶段
+            1. bean实例化
+            2. 填充属性
+            3. 调用BeanNameAware的setBeanName()方法
+            4. 调用BeanFactoryAware的setBeanFactory方法
+            5. 调用ApplicationContextAware的setApplicationContext方法
+            6. 调用BeanPostProcessor的预初始化方法 - postProcessBeforeInitialization
+            7. 调用InitializingBean的afterPropertiesSet方法
+            8. 调用自定义的初始化方法
+            9. 调用BeanPostProcessor的初始化后方法 - postProcessAfterInitialization
+        2. 使用阶段
+            1. using ...
+        3. 销毁阶段
+            1. 调用DisposableBean的destroy方法
+            2. 调用自定义销毁方法
+        【总】：bean在Spring容器中从创建到销毁经历了若干阶段，每一阶段都可以针对Spring如何管理bean进行个性化定制
     -->
     <bean id="knight" class="com.juconcurrent.learn.spring.ioc.BraveKnight">
         <constructor-arg ref="quest"/>
